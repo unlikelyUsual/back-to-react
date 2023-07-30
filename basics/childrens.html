@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <!--- This will let us use react -->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <!--- This will let us use react inside Browser -->
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>   
+ 
+    <!-- First lesson -->
+    <!-- <script>
+
+        const Pet = () => {
+             return React.createElement('h1', {}, 'Luna') 
+        }
+        const App = () => {
+            return React.createElement('h1', {}, [  React.createElement(Pet) ,  React.createElement(Pet), React.createElement(Pet)] ) //children go there inside the array
+        }
+
+        const root =  ReactDOM.createRoot(document.getElementById('root'))
+
+        root.render(React.createElement(App))
+    </script> -->
+
+
+<!-- Second lesson -->
+    <script>
+
+        const Pet  = (props) => {
+             return React.createElement('div', {}, [React.createElement('h1', {}, props.name), React.createElement('p', {}, props.type)  ]) 
+        }
+
+        const App = () => {
+            const array = [] 
+            return React.createElement('h1', {}, [ React.createElement(Pet, {name : 'Luna', type : 'Dog'}), React.createElement(Pet, {name : 'Denny', type : 'Cat'}) ] ) //children go there inside the array
+        }
+
+        const root =  ReactDOM.createRoot(document.getElementById('root'))
+
+        root.render(React.createElement(App))
+    </script>
+</body>
+</html>
